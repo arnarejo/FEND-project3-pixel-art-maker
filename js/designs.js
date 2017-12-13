@@ -16,21 +16,17 @@ function makeGrid(x, y) {
 };
 
 $(document).ready(function() {
-  height = $('#input_height').val();
-  width = $('#input_width').val();
-  makeGrid(height, width);
-
   // Reset grid on click of 'submit' input
-  $('#sizePicker').submit(function(event) {
-    event.preventDefault();
+  $('#sizePicker').submit(function() {
+    $('#colorPicker').val('#ff8000');
     height = $('#input_height').val();
     width = $('#input_width').val();
     makeGrid(height, width);
+    $('td').on('click', function(x) {
+      color = $('#colorPicker').val();
+      // $(x.target).css('background-color', color);
+      $(this).css('background-color', color);
+    });
+    return false;
   });
-
-  $('#pixel_canvas').mouseover(function(x) {
-    color = $('#colorPicker').val();
-    $(x.target).css('background-color', color);
-  });
-
 });
