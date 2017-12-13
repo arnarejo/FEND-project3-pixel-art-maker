@@ -18,7 +18,7 @@ function makeGrid(x, y) {
 $(document).ready(function() {
   // Reset grid on click of 'submit' input
   $('#sizePicker').submit(function() {
-    $('#colorPicker').val('#ff8000');
+    $("#colorPicker").val("#ff8000")
     height = $('#input_height').val();
     width = $('#input_width').val();
     makeGrid(height, width);
